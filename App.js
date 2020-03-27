@@ -1,11 +1,19 @@
 import React from 'react';
-import Home from './Home'
+import Home from './Home';
+import Add from './Add';
+import Post from './Post'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-     <Home/>
-    </div>
+    
+    <Router>
+        <Switch>
+          <Route exact path='/' component={Home}></Route>
+          <Route exact path='/Add' component={Add}></Route>
+          <Route exact path='/1' component={Post}></Route>
+          </Switch>
+          </Router>
   );
 }
 
