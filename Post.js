@@ -1,21 +1,29 @@
 
 import React, { Component } from 'react';
 import './Post'
-
+import  Add from './Add';
 
   
   class Post extends Component {
-    createTasks(item){
-      return <li key={item.key}>{item.text}hi</li>
-    }
-    render() {
-      var todoitem = this.props.items;
-      var  listItems = todoitem.map(this.createTasks)
-      return ( 
-        <div>
-          {listItems}hi
-        </div>
-       );
+    
+
+    render() { 
+      const {items} =this.props
+        return ( 
+            <div>
+               
+                {
+                  items.map(text =>{
+                    return(
+                      <Add key={text.key}
+                      title={text.title}
+                     />
+                    )
+                  }
+                    )
+                }
+            </div>
+         );
     }
   }
    
